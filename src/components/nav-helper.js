@@ -1,5 +1,6 @@
 import React from 'react'
 import local from 'local-links'
+import app from 'ampersand-app'
 
 export default React.createClass({
   displayName: 'NavHelper',

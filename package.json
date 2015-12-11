@@ -48,9 +48,11 @@
     "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
+    "ampersand-app": "^1.0.4",
     "ampersand-router": "^3.0.2",
     "hjs-webpack": "^5.1.0",
     "local-links": "^1.4.0",
+    "qs": "^6.0.1",
     "react": "^0.14.3",
     "yeticss": "^7.0.5"
   },
