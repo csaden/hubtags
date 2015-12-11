@@ -2,8 +2,13 @@
   "name": "hubtags",
   "version": "1.0.0",
   "description": "modern web app development with React, Webpack, Ampersand, and ES6",
-  "main": "index.js",
+  "license": "MIT",
+  "main": "app.js",
+  "private": true,
   "scripts": {
+    "build": "webpack",
+    "deploy": "",
+    "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,9 +22,41 @@
     "es6"
   ],
   "author": "csaden",
-  "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/csaden/hubtags/issues"
   },
-  "homepage": "https://github.com/csaden/hubtags#readme"
+  "homepage": "https://github.com/csaden/hubtags#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.1.2",
+    "babel": "^6.3.13",
+    "babel-core": "^6.3.17",
+    "babel-loader": "^6.2.0",
+    "babel-plugin-syntax-jsx": "^6.3.13",
+    "babel-plugin-transform-react-jsx": "^6.3.13",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "css-loader": "^0.23.0",
+    "file-loader": "^0.8.5",
+    "hjs-webpack": "^5.1.0",
+    "postcss-loader": "^0.8.0",
+    "react-dom": "^0.14.3",
+    "react-hot-loader": "^1.3.0",
+    "style-loader": "^0.13.0",
+    "stylus-loader": "^1.4.2",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
+  },
+  "dependencies": {
+    "ampersand-router": "^3.0.2",
+    "hjs-webpack": "^5.1.0",
+    "local-links": "^1.4.0",
+    "react": "^0.14.3",
+    "yeticss": "^7.0.5"
+  },
+  "standard": {
+    "ignore": [
+      "public/*"
+    ]
+  }
 }
