@@ -6,5 +6,11 @@ module.exports = getConfig({
 	in: './src/app.js',
 	out: 'public',
 	isDev: isDev,
-	clearBeforeBuild: true
+	clearBeforeBuild: true,
+	html: function(context) {
+		return {
+			'index.html': context.defaultTemplate(),
+			'200.html': context.defaultTemplate()
+		};
+	}
 });

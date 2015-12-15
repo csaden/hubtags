@@ -4,11 +4,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import qs from 'qs';
 import xhr from 'xhr';
-import config from './config'
 import Layout from './layout';
 import PublicPage from './pages/public';
 import ReposPage from './pages/repos';
 import RepoDetailPage from './pages/repo-detail';
+import MessagePage from './pages/message';
+import config from './config';
 
 function requiresAuth(handlerName) {
   return function() {
@@ -37,7 +38,8 @@ export default Router.extend({
     'login': 'login',
     'logout': 'logout',
     'repo/:owner/:name': requiresAuth('repoDetail'),
-    'auth/callback?:query': 'authCallback'
+    'auth/callback?:query': 'authCallback',
+    '*catchall': 'catchall', //catchall route to display 404 not found
   },
   public() {
     this.renderPage(<PublicPage/>, {layout: false});
@@ -59,7 +61,7 @@ export default Router.extend({
   authCallback(query) {
     query = qs.parse(query);
     xhr({
-      url: "https://labelr-local-server.herokuapp.com/authenticate/" + query.code,
+      url: config.authUrl + '/' + query.code,
       json: true
 
     }, (err, req, body) => {
@@ -70,9 +72,16 @@ export default Router.extend({
       //matters for the back button in the browser for history
     });
 
+    this.renderPage(<MessagePage title="Fetching your GitHub data..."/>);
+
   },
   logout() {
     window.localStorage.clear();
     window.location = '/';
+  },
+  catchall() {
+    this.renderPage(<MessagePage title="Not Found"
+      body="Sorry, you requested a webpage that does not exist.
+      Check the url you typed in the browser"/>, {layout: true});
   }
 });

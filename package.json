@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "build": "webpack",
-    "deploy": "",
+    "deploy": "surge -p public -d labelr.surge.sh",
     "start": "webpack-dev-server",
     "yolo": "git add --all && git commit -am '$(data)' && npm version minor && git push origin master --tags && npm run build && npm run deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
