@@ -1,6 +1,6 @@
-import React from 'react'
-import local from 'local-links'
-import app from 'ampersand-app'
+import React from 'react';
+import local from 'local-links';
+import app from 'ampersand-app';
 
 export default React.createClass({
   displayName: 'NavHelper',
@@ -9,14 +9,14 @@ export default React.createClass({
       <div {...this.props} onClick={this.onClick}>
         {this.props.children}
       </div>
-    )
+    );
   },
 
   onClick(event) {
     const pathname = local.getLocalPathname(event);
     if (pathname) {
-      event.preventDefault()
-      app.router.history.navigate(pathname)
+      event.preventDefault();
+      app.router.history.navigate(pathname);
     }
   }
-})
+});

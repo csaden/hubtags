@@ -9,6 +9,7 @@
     "build": "webpack",
     "deploy": "",
     "start": "webpack-dev-server",
+    "yolo": "git add --all && git commit -am '$(data)' && npm version minor && git push origin master --tags && npm run build && npm run deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -49,11 +50,16 @@
   },
   "dependencies": {
     "ampersand-app": "^1.0.4",
+    "ampersand-model": "^6.0.2",
+    "ampersand-react-mixin": "^1.0.1",
+    "ampersand-rest-collection": "^5.0.0",
     "ampersand-router": "^3.0.2",
     "hjs-webpack": "^5.1.0",
     "local-links": "^1.4.0",
+    "octicons": "^3.1.0",
     "qs": "^6.0.1",
     "react": "^0.14.3",
+    "xhr": "^2.2.0",
     "yeticss": "^7.0.5"
   },
   "standard": {
